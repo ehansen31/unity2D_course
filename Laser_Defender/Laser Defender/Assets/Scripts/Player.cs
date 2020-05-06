@@ -33,6 +33,11 @@ public class Player : MonoBehaviour
         Fire();
     }
 
+    public int GetHealth()
+    {
+        return health;
+    }
+
     private void Fire()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -92,6 +97,7 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            FindObjectOfType<Level>().LoadGameOver();
         }
     }
 }
